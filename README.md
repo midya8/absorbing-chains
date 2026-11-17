@@ -1,8 +1,8 @@
-# AbsorbLab
+# Absorbing chains
 
-AbsorbLab works out exact first-hit probabilities, conditional times, and Doob transforms for small Markov chains you supply yourself.
+Absorbing chains works out exact first-hit probabilities, conditional times, and Doob transforms for small Markov chains you supply yourself.
 
-Think of a workflow that retries a tool call, wanders into a risky branch, reaches its goal, fails outright, or gets stuck in a closed cycle. Those outcomes are easy to conflate, so AbsorbLab keeps them apart:
+Think of a workflow that retries a tool call, wanders into a risky branch, reaches its goal, fails outright, or gets stuck in a closed cycle. Those outcomes are easy to conflate, so Absorbing chains keeps them apart:
 
 - What's the probability of first success, first failure, or never reaching either one?
 - If success happens, how long does it take — conditional on it happening at all?
@@ -15,9 +15,9 @@ There's no trained model here, no service account, no network inference, and no 
 
 | Question | Page | What you'll see there |
 | --- | --- | --- |
-| Will the chain reach success, fail, or stay in a closed cycle? | [First hit](https://midya8.github.io/absorblab/) | First-hit mass, conditional time, support and elimination steps, finite-horizon forecasts. |
-| Can states be grouped without changing block-transition probabilities? | [Strong lumping](https://midya8.github.io/absorblab/lumping.html) | Refinement splits, every set partition, same-block obligations and the quotient identity `PC=CQ`. |
-| What happens when probability moves within one row? | [Row response and traffic](https://midya8.github.io/absorblab/response.html) | Exact rational interior curves, derivatives, separately solved endpoints and successful-path visits and edge counts. |
+| Will the chain reach success, fail, or stay in a closed cycle? | [First hit](https://midya8.github.io/absorbing-chains/) | First-hit mass, conditional time, support and elimination steps, finite-horizon forecasts. |
+| Can states be grouped without changing block-transition probabilities? | [Strong lumping](https://midya8.github.io/absorbing-chains/lumping.html) | Refinement splits, every set partition, same-block obligations and the quotient identity `PC=CQ`. |
+| What happens when probability moves within one row? | [Row response and traffic](https://midya8.github.io/absorbing-chains/response.html) | Exact rational interior curves, derivatives, separately solved endpoints and successful-path visits and edge counts. |
 
 A couple of things worth getting straight up front. Conditioning picks out the successful trajectories; it doesn't make the original workflow any better. Strong lumping is a statement about the original transition matrix, while first-hit analysis stops at the terminals you supplied. And "exact" here means rational arithmetic — it's not the distinct condition called exact lumpability.
 
@@ -128,4 +128,4 @@ A closed nonterminal class can carry positive never-terminal probability. No con
 
 This is an educational model for supplied probabilities — not an estimator, fairness model, adversarial game, learned calibration system, scalable probabilistic model checker, or real-agent guarantee. The classical methods and public sources are credited in [METHOD.md](METHOD.md). The work here is the bounded implementation, evidence format, checker, tests, and interactive explanation, not a claim of new Markov-chain theory.
 
-MIT licensed. No external assets or vendored solver code. The strict duplicate-key JSON parser and Chrome launch/debugger/download plumbing adapt the author's existing ShieldLab test infrastructure; the AbsorbLab domain engines and controls are separately written.
+MIT licensed. No external assets or vendored solver code. The strict duplicate-key JSON parser and Chrome launch/debugger/download plumbing adapt the author's existing ShieldLab test infrastructure; the Absorbing chains domain engines and controls are separately written.
